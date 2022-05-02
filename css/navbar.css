@@ -1,0 +1,118 @@
+.navbar {
+  width: 100%;
+  max-width: var(--container);
+  margin: auto;
+  background-color: var(--content-background-color);
+  display: flex;
+  align-items: center;
+  padding: 0.5rem var(--gutter);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-bottom: 1px solid var(--background-color);
+}
+
+.desktop-logo {
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.mobile-logo {
+  font-family: var(--heading-font);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.desktop-navbar {
+  display: flex;
+  width: 100%;
+  margin-left: 1rem;
+  justify-content: flex-end;
+}
+
+.desktop-navbar .navbar-item {
+  padding: 0 1rem;
+  border-right: 1px var(--background-color) solid;
+}
+
+.navbar-item:first-child {
+  padding-left: 0;
+}
+
+.navbar-item:last-child {
+  border-right: none;
+}
+
+.mobile-navbar {
+  display: none;
+  flex-direction: column;
+}
+
+.mobile-navbar .navbar-item {
+  padding: 0.5rem 0;
+  border-bottom: 1px var(--background-color) solid;
+}
+
+.mobile-navbar .navbar-item:last-child {
+  border-bottom: none;
+}
+
+.navbar-button-container {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: block;
+    padding: 0;
+  }
+
+  .desktop-logo {
+    display: none;
+  }
+
+  .navbar-button-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem var(--gutter);
+  }
+
+  .navbar-button-container button {
+    padding: 0.5rem;
+    border: 1px var(--background-color) solid;
+    border-radius: 0.25rem;
+    height: 2rem;
+    width: 2rem;
+    background-color: var(--content-background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-button-container button svg {
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
+  .mobile-navbar {
+    display: flex;
+    height: 100vh;
+    overflow: auto;
+    padding: 0.5rem var(--gutter);
+  }
+
+  .desktop-navbar {
+    display: none;
+    z-index: 1;
+  }
+
+  .mobile-navbar-overlay {
+    z-index: 0;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+}

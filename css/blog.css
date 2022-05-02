@@ -1,0 +1,7 @@
+.blog-post-card {
+  border-bottom: 1px var(--background-color) solid;
+}
+
+.blog-post-card:last-child {
+  border-bottom: none;
+}
