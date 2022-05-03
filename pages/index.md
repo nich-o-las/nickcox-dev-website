@@ -5,7 +5,7 @@ description: Austin, TX based web developer specializing in React, TypeScript, T
 tags: pages
 ---
 
-# Hi, I'm Nick
+# Hi, I'm Nick!
 
 ## I'm a web developer.
 

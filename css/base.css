@@ -82,4 +82,8 @@ ul {
   .content {
     padding-top: 4rem;
   }
+
+  .content img {
+    max-width: 280px;
+  }
 }
