@@ -6,5 +6,6 @@ module.exports = function (eleventyConfig) {
     dir: {
       input: "pages",
     },
+    pathPrefix: "/nickcox-dev-website/",
   };
 };
