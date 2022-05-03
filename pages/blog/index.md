@@ -5,7 +5,7 @@ layout: /layouts/base.njk
 tags: pages
 ---
 
-<link rel="stylesheet" href="/css/blog.css"/>
+<link rel="stylesheet" href="{{'/css/blog.css' | url}}"/>
 
 # Blog
 
@@ -13,7 +13,7 @@ tags: pages
 {%- for post in collections.post -%}
   {% set url = ["/blog/", post.data.slug] | join %}
   <li class="blog-post-card">
-    <a href="{{url}}">
+    <a href="{{url | url}}">
       <div>
         <h2 class="blog-heading">{{ post.data.title }}</h2>
         <p>{{post.data.description}}</p>
