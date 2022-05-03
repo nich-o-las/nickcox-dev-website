@@ -8,19 +8,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/css/base.css"/>
+    <link rel="stylesheet" href="/nickcox-dev-website/css/base.css"/>
 
     <title>Nick Cox | Blog</title>
     <meta name="description" content="Nick Cox&#39;s web development blog.">
   </head>
   <body>
-    <link rel="stylesheet" href="/css/navbar.css"/>
+    <link rel="stylesheet" href="/nickcox-dev-website/css/navbar.css"/>
 
 <navbar class="navbar" x-data="{ open: false }">
-  <a href="/" class="desktop-logo">Nick Cox</a>
+  <a href="/nickcox-dev-website/" class="desktop-logo">Nick Cox</a>
 
   <div class="navbar-button-container">
-    <a href="/" class="mobile-logo">Nick Cox</a>
+    <a href="/nickcox-dev-website/" class="mobile-logo">Nick Cox</a>
 
     <button x-show="!open" @click="open = true">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
@@ -37,30 +37,30 @@
   </div>
 
   <div class="desktop-navbar">
-    <a href="/" class="navbar-item">Home</a>
+    <a href="/nickcox-dev-website/" class="navbar-item">Home</a>
 
-    <a href="/blog" class="navbar-item">Blog</a>
+    <a href="/nickcox-dev-website/blog" class="navbar-item">Blog</a>
 
-    <a  href="/projects" class="navbar-item">Projects</a>
+    <a  href="/nickcox-dev-website/projects" class="navbar-item">Projects</a>
   </div>
 
   <div x-show="open" class="mobile-navbar" x-collapse>
-    <a href="/" class="navbar-item">Home</a>
+    <a href="/nickcox-dev-website/" class="navbar-item">Home</a>
 
-    <a href="/blog" class="navbar-item">Blog</a>
+    <a href="/nickcox-dev-website/blog" class="navbar-item">Blog</a>
 
-    <a  href="/projects" class="navbar-item">Projects</a>
+    <a  href="/nickcox-dev-website/projects" class="navbar-item">Projects</a>
   </div>
 
   <div @click="open = false" x-show="open" class="mobile-navbar-overlay"></div>
 </navbar>
     
     <main class="content">
-      <link rel="stylesheet" href="/css/blog.css"/>
+      <link rel="stylesheet" href="/nickcox-dev-website/css/blog.css"/>
 <h1>Blog</h1>
 <ul>
   <li class="blog-post-card">
-    <a href="/blog/learning-web-development-with-a-roadmap">
+    <a href="/nickcox-dev-website/blog/learning-web-development-with-a-roadmap">
       <div>
         <h2 class="blog-heading">Learning Web Development With A Roadmap</h2>
         <p>Learning new skills is daunting, but it&#39;s not as daunting as it sounds.</p>
@@ -68,7 +68,7 @@
     </a>
   </li>
   <li class="blog-post-card">
-    <a href="/blog/using-different-css-methods-to-achieve-the-same-results">
+    <a href="/nickcox-dev-website/blog/using-different-css-methods-to-achieve-the-same-results">
       <div>
         <h2 class="blog-heading">Using Different CSS Methods To Achieve The Same Results</h2>
         <p>CSS is extremely flexible, so it&#39;s good to figure out which approach works best for youl</p>
