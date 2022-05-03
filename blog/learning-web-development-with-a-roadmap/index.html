@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Alpine Plugins -->
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine Core -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/base.css"/>
+
+    <title>Learning Web Development With A Roadmap</title>
+    <meta name="description" content="Learning new skills is daunting, but it&#39;s not as daunting as it sounds.">
+  </head>
+  <body>
+    <link rel="stylesheet" href="/css/navbar.css"/>
+
+<navbar class="navbar" x-data="{ open: false }">
+  <a href="/" class="desktop-logo">Nick Cox</a>
+
+  <div class="navbar-button-container">
+    <a href="/" class="mobile-logo">Nick Cox</a>
+
+    <button x-show="!open" @click="open = true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+      </svg>
+    </button>
+
+    <button x-show="open" @click="open = false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+        <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="desktop-navbar">
+    <a href="/" class="navbar-item">Home</a>
+
+    <a href="/blog" class="navbar-item">Blog</a>
+
+    <a  href="/projects" class="navbar-item">Projects</a>
+  </div>
+
+  <div x-show="open" class="mobile-navbar" x-collapse>
+    <a href="/" class="navbar-item">Home</a>
+
+    <a href="/blog" class="navbar-item">Blog</a>
+
+    <a  href="/projects" class="navbar-item">Projects</a>
+  </div>
+
+  <div @click="open = false" x-show="open" class="mobile-navbar-overlay"></div>
+</navbar>
+    
+    <main class="content">
+      <h1>Learning Web Development With A Roadmap</h1>
+<p>When I started learning web development, I was getting my information from all different sources. I watched youtube videos, bought <a href="https://udemy.com">Udemy</a> courses, and tried interactive tutorials with <a href="https://codecademy.com">Codecademy</a>. These sources were great, but as someone who was completely new to the field, I wasn't so great at creating a curriculum for myself. I didn't know what areas to prioritize, and I didn't know how to move from coding along with tutorials to building my own projects.</p>
+<p>A few months into my learning, I found <a href="https://freecodecamp.org">freeCodeCamp</a>. FreeCodeCamp breaks up its curriculum into logical, step-by-step blocks that teach you how to build real, useful projects right away, and awards you with certificates along the way.</p>
+<p>You can do the exercises in whatever order you choose, but new developers would be well served to start from the beginning. The web development portion of the curriculum (the first 6 certifications) are broken up into two sections: front-end and back-end. The front end section teaches you the basics of responsive web design, before moving on to programming with javascript. My one gripe with their front-end curriculum is that it teaches data structures and algorithms (important to know, but puzzling for newbies) before it ever mentions any sort of practical application of what you're learning. I would recommend learning about the DOM and/or AJAX requests to anyone who is wondering, just like I was, &quot;how do I use any of this stuff that I'm learning?&quot;</p>
+<p>After teaching you the front end fundamentals, it teaches you front end libraries, specifically Bootstrap, JQuery, React, and Redux. These skills provide a strong foundation for any aspiring web developer. The only complaint that I have is that it teaches you front end libraries without first reminding you that you can do all that stuff with plain old JavaScript (no libraries needed).</p>
+<p>The backend section teaches you to build servers with node and express, and shows you how to build APIs with MongoDB and Mongoose. I wish that freeCodeCamp taught SQL in addition to MongoDB, but MongoDB is easy to set up and get going with very little configuration whereas SQL is definitely not, so I understand why they left it out. It goes on to teach quality control and other areas of web development, but by this point, you're well on your way.</p>
+<p>The best thing about FreeCodeCamp is that it holds your hand when you need it, but it teaches you to create things on your own. You'll walk away having created things that you can share on <a href="https://codepen.io">CodePen</a> and <a href="https://repl.it">Repl.it</a>. You never have to worry about what to learn, you just have to have to learn.</p>
+
+    </main>
+  </body>
+</html>

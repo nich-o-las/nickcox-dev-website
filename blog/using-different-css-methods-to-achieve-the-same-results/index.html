@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Alpine Plugins -->
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine Core -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/base.css"/>
+
+    <title>Using Different CSS Methods To Achieve The Same Results</title>
+    <meta name="description" content="CSS is extremely flexible, so it&#39;s good to figure out which approach works best for youl">
+  </head>
+  <body>
+    <link rel="stylesheet" href="/css/navbar.css"/>
+
+<navbar class="navbar" x-data="{ open: false }">
+  <a href="/" class="desktop-logo">Nick Cox</a>
+
+  <div class="navbar-button-container">
+    <a href="/" class="mobile-logo">Nick Cox</a>
+
+    <button x-show="!open" @click="open = true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+      </svg>
+    </button>
+
+    <button x-show="open" @click="open = false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+        <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="desktop-navbar">
+    <a href="/" class="navbar-item">Home</a>
+
+    <a href="/blog" class="navbar-item">Blog</a>
+
+    <a  href="/projects" class="navbar-item">Projects</a>
+  </div>
+
+  <div x-show="open" class="mobile-navbar" x-collapse>
+    <a href="/" class="navbar-item">Home</a>
+
+    <a href="/blog" class="navbar-item">Blog</a>
+
+    <a  href="/projects" class="navbar-item">Projects</a>
+  </div>
+
+  <div @click="open = false" x-show="open" class="mobile-navbar-overlay"></div>
+</navbar>
+    
+    <main class="content">
+      <h1>Using Different CSS Methods To Achieve The Same Results</h1>
+<p>CSS is extremely flexible, and there are no hard and fast rules when it comes to how you should achieve your desired layout. You can achieve the same results an any number of ways, so it's up to you to decide which way is best for your project.</p>
+<p>I'm going to show you a few different approaches to achieve the same layout with HTML and CSS (I used <a href="https://tailwindcss.com/">TailwindCSS</a> for these examples).</p>
+<h2>Method One: Parent has all the power</h2>
+<p><img src="https://i.imgflip.com/11a0zv.jpg" alt=""></p>
+<iframe height="600" style="width: 100%;" scrolling="no" title="PowerToTheParent" src="https://codepen.io/nich-o-las/embed/YzNKwGX?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/nich-o-las/pen/YzNKwGX">
+  PowerToTheParent</a> by nich-o-las (<a href="https://codepen.io/nich-o-las">@nich-o-las</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+<p>The first example gives all the control of the layout to the parent container. The parent container has padding, as well as tailwind's <code>space-y-2</code> rule to achieve the desired vertical margins between the child elements. There are no rules are applied to the children themselves. This is a great way to set rules on things like lists, tiles, or anything else where you might have to render a lot of children dynamically, e.g. list items you've returned from an AJAX call, or items in a &quot;todo list&quot; application. This method uses the smallest amount of code among the three examples.</p>
+<h2>Method Two: Children have all the power</h2>
+<p><img src="https://images-na.ssl-images-amazon.com/images/I/51eeAWItwbL._SX281_BO1,204,203,200_.jpg" alt=""></p>
+<iframe height="600" style="width: 100%;" scrolling="no" title="PowerToTheChildren" src="https://codepen.io/nich-o-las/embed/LYxPBEe?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/nich-o-las/pen/LYxPBEe">
+  PowerToTheChildren</a> by nich-o-las (<a href="https://codepen.io/nich-o-las">@nich-o-las</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+<p>The second example gives the power over the layout to the children. The white divs (items 1,2, and 3) are all wrapped in a container div whose padding positions the child elements. This method can be useful when you have a more bespoke design, where you need to give each child more control of its appearance and location in the layout. This method might appeal to anyone who likes to avoid issues of inheritance in CSS by keeping all rules localized to the content to which they apply. This method has the most code of all three examples, as it is the only one that has an extra layer of nesting.</p>
+<h2>Method Three: Parent and children share power</h2>
+<p><img src="https://www.memesmonkey.com/images/memesmonkey/29/2918ad8fae30f7bd7fc529a48d21451b.jpeg" alt=""></p>
+<iframe height="600" style="width: 100%;" scrolling="no" title="PowerSharedBetweenChildrenAndParent" src="https://codepen.io/nich-o-las/embed/QWdLBwW?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/nich-o-las/pen/QWdLBwW">
+  PowerSharedBetweenChildrenAndParent</a> by nich-o-las (<a href="https://codepen.io/nich-o-las">@nich-o-las</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+<p>The last example delegates some of the power to the parent element, and some to the children. The parent container has padding, and the second and third children are positioned by adding a top margin. This example is good for when you have a general container with rules that apply to all children, but you still want each child to have some level of control over its own position and appearance within the layout.</p>
+<h2>TL/DR: Do what makes most sense to your and your team</h2>
+<p>There are no rules, but that doesn't mean that you should take an anarchic approach to your layouts. Figure out what works best for you and your team, and do that.</p>
+
+    </main>
+  </body>
+</html>
