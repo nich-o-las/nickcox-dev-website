@@ -40,7 +40,7 @@
 
 @media screen and (max-width: 768px) {
   .blog-content img {
-    max-width: 60&;
+    max-width: 60%;
     text-align: center;
   }
 }
