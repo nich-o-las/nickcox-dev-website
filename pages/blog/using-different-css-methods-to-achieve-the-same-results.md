@@ -1,12 +1,12 @@
 ---
 title: Using Different CSS Methods To Achieve The Same Results
 description: CSS is extremely flexible, so it's good to figure out which approach works best for youl
-layout: /layouts/base.njk
+layout: /layouts/blog.njk
 slug: using-different-css-methods-to-achieve-the-same-results
 tags: post
+date: 2022-04-08
+originally_published: https://nocd.hashnode.dev/using-different-css-methods-to-achieve-the-same-results
 ---
-
-# Using Different CSS Methods To Achieve The Same Results
 
 CSS is extremely flexible, and there are no hard and fast rules when it comes to how you should achieve your desired layout. You can achieve the same results an any number of ways, so it's up to you to decide which way is best for your project.
 
@@ -16,7 +16,7 @@ I'm going to show you a few different approaches to achieve the same layout with
 
 ![](https://i.imgflip.com/11a0zv.jpg)
 
-<iframe height="600" style="width: 100%;" scrolling="no" title="PowerToTheParent" src="https://codepen.io/nich-o-las/embed/YzNKwGX?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="400" style="width: 100%;" scrolling="no" title="PowerToTheParent" src="https://codepen.io/nich-o-las/embed/YzNKwGX?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/nich-o-las/pen/YzNKwGX">
   PowerToTheParent</a> by nich-o-las (<a href="https://codepen.io/nich-o-las">@nich-o-las</a>)
   on <a href="https://codepen.io">CodePen</a>.
@@ -28,7 +28,7 @@ The first example gives all the control of the layout to the parent container. T
 
 ![](https://images-na.ssl-images-amazon.com/images/I/51eeAWItwbL._SX281_BO1,204,203,200_.jpg)
 
-<iframe height="600" style="width: 100%;" scrolling="no" title="PowerToTheChildren" src="https://codepen.io/nich-o-las/embed/LYxPBEe?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="400" style="width: 100%;" scrolling="no" title="PowerToTheChildren" src="https://codepen.io/nich-o-las/embed/LYxPBEe?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/nich-o-las/pen/LYxPBEe">
   PowerToTheChildren</a> by nich-o-las (<a href="https://codepen.io/nich-o-las">@nich-o-las</a>)
   on <a href="https://codepen.io">CodePen</a>.
@@ -40,7 +40,7 @@ The second example gives the power over the layout to the children. The white di
 
 ![](https://www.memesmonkey.com/images/memesmonkey/29/2918ad8fae30f7bd7fc529a48d21451b.jpeg)
 
-<iframe height="600" style="width: 100%;" scrolling="no" title="PowerSharedBetweenChildrenAndParent" src="https://codepen.io/nich-o-las/embed/QWdLBwW?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="400" style="width: 100%;" scrolling="no" title="PowerSharedBetweenChildrenAndParent" src="https://codepen.io/nich-o-las/embed/QWdLBwW?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/nich-o-las/pen/QWdLBwW">
   PowerSharedBetweenChildrenAndParent</a> by nich-o-las (<a href="https://codepen.io/nich-o-las">@nich-o-las</a>)
   on <a href="https://codepen.io">CodePen</a>.

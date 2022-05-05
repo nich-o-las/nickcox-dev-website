@@ -1,12 +1,12 @@
 ---
 title: Learning Web Development With A Roadmap
-layout: /layouts/base.njk
+layout: /layouts/blog.njk
 tags: post
 slug: learning-web-development-with-a-roadmap
 description: Learning new skills is daunting, but it's not as daunting as it sounds.
+date: 2022-04-08
+originally_published: https://nocd.hashnode.dev/learning-web-development-with-a-roadmap
 ---
-
-# {{title}}
 
 When I started learning web development, I was getting my information from all different sources. I watched youtube videos, bought [Udemy](https://udemy.com) courses, and tried interactive tutorials with [Codecademy](https://codecademy.com). These sources were great, but as someone who was completely new to the field, I wasn't so great at creating a curriculum for myself. I didn't know what areas to prioritize, and I didn't know how to move from coding along with tutorials to building my own projects.
 

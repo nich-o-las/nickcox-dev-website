@@ -21,19 +21,15 @@
   </div>
 
   <div class="desktop-navbar">
-    <a href="{{'/' | url}}" class="navbar-item">Home</a>
-
-    <a href="{{'/blog' | url}}" class="navbar-item">Blog</a>
-
-    <a  href="{{'/projects' | url}}" class="navbar-item">Projects</a>
+    {% for page in collections.pages %}
+      <a  href="{{page.data.permalink | url}}" class="navbar-item">{{page.data.label}}</a>
+    {% endfor %}
   </div>
 
   <div x-show="open" class="mobile-navbar" x-collapse>
-    <a href="{{'/' | url}}" class="navbar-item">Home</a>
-
-    <a href="{{'/blog' | url}}" class="navbar-item">Blog</a>
-
-    <a  href="{{'/projects' | url}}" class="navbar-item">Projects</a>
+    {% for page in collections.pages %}
+      <a  href="{{page.data.permalink | url}}" class="navbar-item">{{page.data.label}}</a>
+    {% endfor %}
   </div>
 
   <div @click="open = false" x-show="open" class="mobile-navbar-overlay"></div>

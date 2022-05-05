@@ -1,0 +1,58 @@
+---
+title: Nick Cox | Web Developer
+layout: layouts/base.njk
+description: Austin, TX based web developer specializing in React, TypeScript, TailwindCSS, and Python.
+tags: pages
+label: Home
+permalink: /
+---
+
+{% block styles %}
+  <link rel="stylesheet" href="{{'/css/homepage.css' | url}}">
+{% endblock %}
+
+
+{% block content %}
+  <div class="homepage-content">
+    <div class="homepage-content-hero">
+      <img 
+        class="homepage-content-hero-image" 
+        src="https://res.cloudinary.com/dvqaajrs0/image/upload/h_300/v1651534974/gh-profile/business-headshot.jpg" 
+        alt="Nick Cox" 
+      />
+    </div>
+
+    <div class="homepage-content-hero-heading">
+      <span class="homepage-content-hero-heading-text">
+        <h1>Hi, I'm Nick!</h1>
+
+        <h2>I'm a web developer.</h2>
+      </span>
+    </div>
+
+    <p>
+      I primarily work with React, TypeScript, and Python. I have experience building 
+      and maintaining scalable, performant, and secure web applications. I'm always looking 
+      to learn new things.
+    </p>
+
+    <p>Some of the languages, methodologies, libraries, and frameworks that I've worked with:</p>
+
+    <ul class="homepage-content-skills-list">
+      <li>TypeScript</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+      <li>React</li>
+      <li>Next.JS</li>
+      <li>Gatsby.JS</li>
+      <li>Eleventy.JS</li>
+      <li>TailwindCSS</li>
+      <li>BootstrapCSS</li>
+      <li>Material-UI</li>
+      <li>Styled Components</li>
+      <li>REST APIs</li>
+      <li>GraphQL</li>
+      <li>WordPress</li>
+    </ul>
+  </div>
+{% endblock %}

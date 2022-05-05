@@ -3,6 +3,8 @@ title: Nick Cox | Blog
 description: Nick Cox's web development blog.
 layout: /layouts/base.njk
 tags: pages
+label: Blog
+permalink: /blog/
 ---
 
 <link rel="stylesheet" href="{{'/css/blog.css' | url}}"/>
