@@ -7,12 +7,17 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/nickcox-dev-website/images/favicon.ico">
 
     <link rel="stylesheet" href="/nickcox-dev-website/css/base.css"/>
+
+    
+    
 
     <title>Nick Cox | Blog</title>
     <meta name="description" content="Nick Cox&#39;s web development blog.">
   </head>
+  
   <body>
     <link rel="stylesheet" href="/nickcox-dev-website/css/navbar.css"/>
 
@@ -37,26 +42,27 @@
   </div>
 
   <div class="desktop-navbar">
-    <a href="/nickcox-dev-website/" class="navbar-item">Home</a>
-
-    <a href="/nickcox-dev-website/blog" class="navbar-item">Blog</a>
-
-    <a  href="/nickcox-dev-website/projects" class="navbar-item">Projects</a>
+    
+      <a  href="/nickcox-dev-website/blog/" class="navbar-item">Blog</a>
+    
+      <a  href="/nickcox-dev-website/" class="navbar-item">Home</a>
+    
   </div>
 
   <div x-show="open" class="mobile-navbar" x-collapse>
-    <a href="/nickcox-dev-website/" class="navbar-item">Home</a>
-
-    <a href="/nickcox-dev-website/blog" class="navbar-item">Blog</a>
-
-    <a  href="/nickcox-dev-website/projects" class="navbar-item">Projects</a>
+    
+      <a  href="/nickcox-dev-website/blog/" class="navbar-item">Blog</a>
+    
+      <a  href="/nickcox-dev-website/" class="navbar-item">Home</a>
+    
   </div>
 
   <div @click="open = false" x-show="open" class="mobile-navbar-overlay"></div>
 </navbar>
     
-    <main class="content">
-      <link rel="stylesheet" href="/nickcox-dev-website/css/blog.css"/>
+    
+      <main class="content">
+        <link rel="stylesheet" href="/nickcox-dev-website/css/blog.css"/>
 <h1>Blog</h1>
 <ul>
   <li class="blog-post-card">
@@ -76,6 +82,13 @@
     </a>
   </li></ul>
 
-    </main>
+      </main>
+    
+
+    <link rel="stylesheet" href="/nickcox-dev-website/css/footer.css"/>
+
+<div class="footer">
+  Copyright © 2022 - Nicholas Cox
+</div>
   </body>
 </html>

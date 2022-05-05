@@ -5,3 +5,42 @@
 .blog-post-card:last-child {
   border-bottom: none;
 }
+
+.blog-content {
+  max-width: 600px;
+  margin: auto;
+}
+
+.blog-content-date {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+.blog-content a {
+  text-decoration: underline;
+}
+
+.blog-content h1 {
+  margin-bottom: 0.75rem;
+}
+
+.blog-content img {
+  max-width: 400px;
+}
+
+.blog-content-originally-published {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 2rem 0 0 0;
+}
+
+@media screen and (max-width: 768px) {
+  .blog-content img {
+    max-width: 60&;
+    text-align: center;
+  }
+}

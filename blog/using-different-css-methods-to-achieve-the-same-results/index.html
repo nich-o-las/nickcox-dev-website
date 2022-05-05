@@ -7,12 +7,18 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/nickcox-dev-website/images/favicon.ico">
 
     <link rel="stylesheet" href="/nickcox-dev-website/css/base.css"/>
+
+    
+  <link rel="stylesheet" href="/nickcox-dev-website/css/blog.css"/>
+
 
     <title>Using Different CSS Methods To Achieve The Same Results</title>
     <meta name="description" content="CSS is extremely flexible, so it&#39;s good to figure out which approach works best for youl">
   </head>
+  
   <body>
     <link rel="stylesheet" href="/nickcox-dev-website/css/navbar.css"/>
 
@@ -37,31 +43,36 @@
   </div>
 
   <div class="desktop-navbar">
-    <a href="/nickcox-dev-website/" class="navbar-item">Home</a>
-
-    <a href="/nickcox-dev-website/blog" class="navbar-item">Blog</a>
-
-    <a  href="/nickcox-dev-website/projects" class="navbar-item">Projects</a>
+    
+      <a  href="/nickcox-dev-website/blog/" class="navbar-item">Blog</a>
+    
+      <a  href="/nickcox-dev-website/" class="navbar-item">Home</a>
+    
   </div>
 
   <div x-show="open" class="mobile-navbar" x-collapse>
-    <a href="/nickcox-dev-website/" class="navbar-item">Home</a>
-
-    <a href="/nickcox-dev-website/blog" class="navbar-item">Blog</a>
-
-    <a  href="/nickcox-dev-website/projects" class="navbar-item">Projects</a>
+    
+      <a  href="/nickcox-dev-website/blog/" class="navbar-item">Blog</a>
+    
+      <a  href="/nickcox-dev-website/" class="navbar-item">Home</a>
+    
   </div>
 
   <div @click="open = false" x-show="open" class="mobile-navbar-overlay"></div>
 </navbar>
     
-    <main class="content">
+    
+  <main class="content">
+    <div class="blog-content">
       <h1>Using Different CSS Methods To Achieve The Same Results</h1>
-<p>CSS is extremely flexible, and there are no hard and fast rules when it comes to how you should achieve your desired layout. You can achieve the same results an any number of ways, so it's up to you to decide which way is best for your project.</p>
+
+      <p class="blog-content-date">Apr 8, 2022</p>
+
+      <p>CSS is extremely flexible, and there are no hard and fast rules when it comes to how you should achieve your desired layout. You can achieve the same results an any number of ways, so it's up to you to decide which way is best for your project.</p>
 <p>I'm going to show you a few different approaches to achieve the same layout with HTML and CSS (I used <a href="https://tailwindcss.com/">TailwindCSS</a> for these examples).</p>
 <h2>Method One: Parent has all the power</h2>
 <p><img src="https://i.imgflip.com/11a0zv.jpg" alt=""></p>
-<iframe height="600" style="width: 100%;" scrolling="no" title="PowerToTheParent" src="https://codepen.io/nich-o-las/embed/YzNKwGX?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="400" style="width: 100%;" scrolling="no" title="PowerToTheParent" src="https://codepen.io/nich-o-las/embed/YzNKwGX?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/nich-o-las/pen/YzNKwGX">
   PowerToTheParent</a> by nich-o-las (<a href="https://codepen.io/nich-o-las">@nich-o-las</a>)
   on <a href="https://codepen.io">CodePen</a>.
@@ -69,7 +80,7 @@
 <p>The first example gives all the control of the layout to the parent container. The parent container has padding, as well as tailwind's <code>space-y-2</code> rule to achieve the desired vertical margins between the child elements. There are no rules are applied to the children themselves. This is a great way to set rules on things like lists, tiles, or anything else where you might have to render a lot of children dynamically, e.g. list items you've returned from an AJAX call, or items in a &quot;todo list&quot; application. This method uses the smallest amount of code among the three examples.</p>
 <h2>Method Two: Children have all the power</h2>
 <p><img src="https://images-na.ssl-images-amazon.com/images/I/51eeAWItwbL._SX281_BO1,204,203,200_.jpg" alt=""></p>
-<iframe height="600" style="width: 100%;" scrolling="no" title="PowerToTheChildren" src="https://codepen.io/nich-o-las/embed/LYxPBEe?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="400" style="width: 100%;" scrolling="no" title="PowerToTheChildren" src="https://codepen.io/nich-o-las/embed/LYxPBEe?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/nich-o-las/pen/LYxPBEe">
   PowerToTheChildren</a> by nich-o-las (<a href="https://codepen.io/nich-o-las">@nich-o-las</a>)
   on <a href="https://codepen.io">CodePen</a>.
@@ -77,7 +88,7 @@
 <p>The second example gives the power over the layout to the children. The white divs (items 1,2, and 3) are all wrapped in a container div whose padding positions the child elements. This method can be useful when you have a more bespoke design, where you need to give each child more control of its appearance and location in the layout. This method might appeal to anyone who likes to avoid issues of inheritance in CSS by keeping all rules localized to the content to which they apply. This method has the most code of all three examples, as it is the only one that has an extra layer of nesting.</p>
 <h2>Method Three: Parent and children share power</h2>
 <p><img src="https://www.memesmonkey.com/images/memesmonkey/29/2918ad8fae30f7bd7fc529a48d21451b.jpeg" alt=""></p>
-<iframe height="600" style="width: 100%;" scrolling="no" title="PowerSharedBetweenChildrenAndParent" src="https://codepen.io/nich-o-las/embed/QWdLBwW?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe height="400" style="width: 100%;" scrolling="no" title="PowerSharedBetweenChildrenAndParent" src="https://codepen.io/nich-o-las/embed/QWdLBwW?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/nich-o-las/pen/QWdLBwW">
   PowerSharedBetweenChildrenAndParent</a> by nich-o-las (<a href="https://codepen.io/nich-o-las">@nich-o-las</a>)
   on <a href="https://codepen.io">CodePen</a>.
@@ -86,6 +97,21 @@
 <h2>TL/DR: Do what makes most sense to your and your team</h2>
 <p>There are no rules, but that doesn't mean that you should take an anarchic approach to your layouts. Figure out what works best for you and your team, and do that.</p>
 
-    </main>
+
+      
+        <p class="blog-content-originally-published">
+          This blog post was originally published 
+          <a href="https://nocd.hashnode.dev/using-different-css-methods-to-achieve-the-same-results" target="_blank">here</a>.
+        </p>
+      
+    </div>
+  </main>
+
+
+    <link rel="stylesheet" href="/nickcox-dev-website/css/footer.css"/>
+
+<div class="footer">
+  Copyright © 2022 - Nicholas Cox
+</div>
   </body>
 </html>

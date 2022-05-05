@@ -67,6 +67,7 @@
   .navbar {
     display: block;
     padding: 0;
+    z-index: 1;
   }
 
   .desktop-logo {
@@ -109,7 +110,6 @@
   }
 
   .mobile-navbar-overlay {
-    z-index: 0;
     position: absolute;
     height: 100vh;
     width: 100vw;
