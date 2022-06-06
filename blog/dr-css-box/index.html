@@ -85,7 +85,7 @@
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 <p>I have added 16 pixels of vertical padding in our second box, and a margin of 16 pixels to the top. Now I have a box with margin, padding, and content! I can inspect the element in my devtools and see that with my padding and margin combined, I have all 32 pixels accounted for:</p>
-<p>![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1653593668464/XMJsSd-xG.png align=&quot;left&quot;)</p>
+<p><img src="https://res.cloudinary.com/dvqaajrs0/image/upload/v1654530529/blog/inspector-padding.png" alt="chrome inspector showing padding and margin"></p>
 <h2>Do we really need vertical padding if there is no background or border on your box?</h2>
 <h3>Vertical padding, when it's not absolutely necessary, makes understanding the real pixel distance between your elements much harder to understand.</h3>
 <p>Since the only stipulation of our design is that our content (text) needs to be vertically separated by 32 pixels, I propose that we don't include any vertical padding on our second element, and that we instead add all 32 pixels as top-margin to our bottom box.</p>
@@ -96,7 +96,7 @@
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 <p>Now, when we inspect that element with our devtools, we can easily see the distance between content, as it is all in one margin rule:
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1653593574174/rBTcM0EX9.png align=&quot;left&quot;)</p>
+<img src="https://res.cloudinary.com/dvqaajrs0/image/upload/v1654530529/blog/inspector-margin.png" alt="chrome html inspector showing only margin"></p>
 <h2>But when do I use vertical margin then?</h2>
 <h3>You can use vertical margin anytime your element has a background or a border!</h3>
 <p>If our design calls for more than just raw text content, and our element has a background, we should absolutely use vertical padding! Backgrounds and borders create a <em>clear distinction</em> between padding and margin.</p>
