@@ -33,7 +33,7 @@ I'm putting a red border around the second box so you can get an idea of where i
 
 I have added 16 pixels of vertical padding in our second box, and a margin of 16 pixels to the top. Now I have a box with margin, padding, and content! I can inspect the element in my devtools and see that with my padding and margin combined, I have all 32 pixels accounted for:
 
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1653593668464/XMJsSd-xG.png align="left")
+![chrome inspector showing padding and margin](https://res.cloudinary.com/dvqaajrs0/image/upload/v1654530529/blog/inspector-padding.png)
 
 ## Do we really need vertical padding if there is no background or border on your box?
 
@@ -50,7 +50,7 @@ You can visualize that change here, with the red border as an indication of the 
 </iframe>
 
 Now, when we inspect that element with our devtools, we can easily see the distance between content, as it is all in one margin rule:
-![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1653593574174/rBTcM0EX9.png align="left")
+![chrome html inspector showing only margin](https://res.cloudinary.com/dvqaajrs0/image/upload/v1654530529/blog/inspector-margin.png)
 
 ## But when do I use vertical margin then?
 
