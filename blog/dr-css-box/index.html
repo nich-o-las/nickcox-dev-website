@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Alpine Plugins -->
+    <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine Core -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/nickcox-dev-website/images/favicon.ico">
+
+    <link rel="stylesheet" href="/nickcox-dev-website/css/base.css"/>
+
+    
+  <link rel="stylesheet" href="/nickcox-dev-website/css/blog.css"/>
+
+
+    <title>Dr. CSS Box or: How I Learned to Stop Worrying and Love the Margin</title>
+    <meta name="description" content="The CSS box model is simple, right? RIGHT?">
+  </head>
+  
+  <body>
+    <link rel="stylesheet" href="/nickcox-dev-website/css/navbar.css"/>
+
+<navbar class="navbar" x-data="{ open: false }">
+  <a href="/nickcox-dev-website/" class="desktop-logo">Nick Cox</a>
+
+  <div class="navbar-button-container">
+    <a href="/nickcox-dev-website/" class="mobile-logo">Nick Cox</a>
+
+    <button x-show="!open" @click="open = true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+      </svg>
+    </button>
+
+    <button x-show="open" @click="open = false">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M13.854 2.146a.5.5 0 0 1 0 .708l-11 11a.5.5 0 0 1-.708-.708l11-11a.5.5 0 0 1 .708 0Z"/>
+        <path fill-rule="evenodd" d="M2.146 2.146a.5.5 0 0 0 0 .708l11 11a.5.5 0 0 0 .708-.708l-11-11a.5.5 0 0 0-.708 0Z"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="desktop-navbar">
+    
+      <a  href="/nickcox-dev-website/blog/" class="navbar-item">Blog</a>
+    
+      <a  href="/nickcox-dev-website/" class="navbar-item">Home</a>
+    
+  </div>
+
+  <div x-show="open" class="mobile-navbar" x-collapse>
+    
+      <a  href="/nickcox-dev-website/blog/" class="navbar-item">Blog</a>
+    
+      <a  href="/nickcox-dev-website/" class="navbar-item">Home</a>
+    
+  </div>
+
+  <div @click="open = false" x-show="open" class="mobile-navbar-overlay"></div>
+</navbar>
+    
+    
+  <main class="content">
+    <div class="blog-content">
+      <h1>Dr. CSS Box or: How I Learned to Stop Worrying and Love the Margin</h1>
+
+      <p class="blog-content-date">May 28, 2022</p>
+
+      <p>The CSS box model is simple, right? You just imagine your content as a box, and that box has interior padding, and outside of the box, you use margin to control its position relative to elements around it. It's so simple, it requires no real conversation to make sure we all have the same understanding of what exactly all of these things (content, layout, etc) really means.</p>
+<p>That's the problem. Where does my box start, and where does it end? When do I need margin, and when do I need padding? What is the airspeed velocity of an unladen swallow? These are the questions that keep web developers up at night, and these are the questions that I, the highest authority on web development in the world, am here to answer.</p>
+<h2>THE AFOREMENTIONED BOX:</h2>
+<p><img src="https://www.kasandbox.org/programming-images/misc/boxmodel.png" alt="CSS box model illustration from Khan Academy"></p>
+<p>The idea is simple:</p>
+<ul>
+<li>padding positions the content inside the box</li>
+<li>margin positions the box relative to other elements</li>
+</ul>
+<p>The problem comes when working with padding and margin in conjunction. Let's say you have <code>&lt;div&gt;</code> elements with 2 <code>&lt;p&gt;</code> elements inside of them. Our design calls for us to position the content inside of these 2 boxes 32 pixels apart.</p>
+<p>I'm putting a red border around the second box so you can get an idea of where it begins and ends, but let's just imagine that in the real design, there is no border.</p>
+<iframe height="300" style="width: 100%;" scrolling="no" title="With Vertical Padding" src="https://codepen.io/nich-o-las/embed/VwQyaoE?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/nich-o-las/pen/VwQyaoE">
+  Untitled</a> by nich-o-las (<a href="https://codepen.io/nich-o-las">@nich-o-las</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+<p>I have added 16 pixels of vertical padding in our second box, and a margin of 16 pixels to the top. Now I have a box with margin, padding, and content! I can inspect the element in my devtools and see that with my padding and margin combined, I have all 32 pixels accounted for:</p>
+<p>![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1653593668464/XMJsSd-xG.png align=&quot;left&quot;)</p>
+<h2>Do we really need vertical padding if there is no background or border on your box?</h2>
+<h3>Vertical padding, when it's not absolutely necessary, makes understanding the real pixel distance between your elements much harder to understand.</h3>
+<p>Since the only stipulation of our design is that our content (text) needs to be vertically separated by 32 pixels, I propose that we don't include any vertical padding on our second element, and that we instead add all 32 pixels as top-margin to our bottom box.</p>
+<p>You can visualize that change here, with the red border as an indication of the box itself:</p>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Without Vertical Padding" src="https://codepen.io/nich-o-las/embed/OJQzXML?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/nich-o-las/pen/OJQzXML">
+  Without Vertical Padding</a> by nich-o-las (<a href="https://codepen.io/nich-o-las">@nich-o-las</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+<p>Now, when we inspect that element with our devtools, we can easily see the distance between content, as it is all in one margin rule:
+![image.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1653593574174/rBTcM0EX9.png align=&quot;left&quot;)</p>
+<h2>But when do I use vertical margin then?</h2>
+<h3>You can use vertical margin anytime your element has a background or a border!</h3>
+<p>If our design calls for more than just raw text content, and our element has a background, we should absolutely use vertical padding! Backgrounds and borders create a <em>clear distinction</em> between padding and margin.</p>
+<p>In the example below, I still have 2 <code>div</code> elements with 2 internal <code>&lt;p&gt;</code> elements inside of each, but the <code>div</code> elements now have their own backgrounds.</p>
+<p>The new stipulations of our design are:</p>
+<ul>
+<li>we need two boxes with 2 lines of text in each</li>
+<li>one box has a black background, and one box has a blue background</li>
+<li>we have 16 pixels of the background above and below the text in each box</li>
+<li>we have 16 pixels between the boxes</li>
+</ul>
+<iframe height="300" style="width: 100%;" scrolling="no" title="Without Vertical Padding" src="https://codepen.io/nich-o-las/embed/oNEpLba?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/nich-o-las/pen/oNEpLba">
+  Without Vertical Padding</a> by nich-o-las (<a href="https://codepen.io/nich-o-las">@nich-o-las</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+<h3>TL/DR</h3>
+<p>Don't use vertical padding on an element unless you need to position your content appropriately in relation to that element's border or a background</p>
+
+
+      
+        <p class="blog-content-originally-published">
+          This blog post was originally published 
+          <a href="https://nocd.hashnode.dev/dr-css-box-or-how-i-learned-to-stop-worrying-and-love-the-margin" target="_blank">here</a>.
+        </p>
+      
+    </div>
+  </main>
+
+
+    <link rel="stylesheet" href="/nickcox-dev-website/css/footer.css"/>
+
+<div class="footer">
+  Copyright © 2022 - Nicholas Cox
+</div>
+  </body>
+</html>
